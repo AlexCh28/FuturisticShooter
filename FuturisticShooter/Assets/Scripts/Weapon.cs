@@ -32,7 +32,7 @@ public class Weapon : NetworkBehaviour
         startLocalPositionX = transform.localPosition.x;
         startLocalEulerAngles = transform.localEulerAngles;
         startFieldOfView = playerMainCamera.fieldOfView;
-        gameObject.GetComponent<MeshRenderer>().enabled=false;
+        //gameObject.GetComponent<MeshRenderer>().enabled=false;
     }
     
     void Update(){
@@ -68,8 +68,8 @@ public class Weapon : NetworkBehaviour
         if (!canChangeAimMode || isShooting || isInAimMode) return;
         canShoot = false;
         isInAimMode = true;
-        playerMainCamera.DOFieldOfView(aimFieldOfView,aimDuration);
-        playerWeaponCamera.DOFieldOfView(aimFieldOfView,aimDuration);
+        // playerMainCamera.DOFieldOfView(aimFieldOfView,aimDuration);
+        // playerWeaponCamera.DOFieldOfView(aimFieldOfView,aimDuration);
         transform.DOLocalMoveX(0,aimDuration).OnComplete(()=>canShoot=true);
         transform.DOLocalRotate(new Vector3(startLocalEulerAngles.x,180,startLocalEulerAngles.z), aimDuration);
     }
@@ -78,8 +78,8 @@ public class Weapon : NetworkBehaviour
         if (!canChangeAimMode || isShooting || !isInAimMode) return;
         canShoot = false;
         isInAimMode = false;
-        playerMainCamera.DOFieldOfView(startFieldOfView,aimDuration);
-        playerWeaponCamera.DOFieldOfView(startFieldOfView,aimDuration);
+        // playerMainCamera.DOFieldOfView(startFieldOfView,aimDuration);
+        // playerWeaponCamera.DOFieldOfView(startFieldOfView,aimDuration);
         transform.DOLocalMoveX(startLocalPositionX,aimDuration).OnComplete(()=>{canShoot=true;});
         transform.DOLocalRotate(startLocalEulerAngles, aimDuration);
     }
