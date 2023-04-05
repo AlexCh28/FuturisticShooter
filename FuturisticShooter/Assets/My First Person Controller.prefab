@@ -3492,7 +3492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetTransform: {fileID: 2703399310809324623}
   _parentTransform: {fileID: 3092692689386611445}
-  _offset: {x: 0, y: 0, z: 0}
+  _offset: {x: 0, y: 0, z: 0.12}
 --- !u!1 &7101001067849289689
 GameObject:
   m_ObjectHideFlags: 0
@@ -4113,7 +4113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetTransform: {fileID: 5256515588795868141}
   _parentTransform: {fileID: 3092692689386611445}
-  _offset: {x: 0, y: 0, z: 0}
+  _offset: {x: 0.15, y: 0, z: 0}
 --- !u!1 &8359890105012097693
 GameObject:
   m_ObjectHideFlags: 0
